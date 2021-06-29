@@ -1,10 +1,10 @@
 # You can use any Node version you like, see the full list of available versions:
 # https://hub.docker.com/_/node
-FROM node:14-alpine
+FROM node:12.14.1
 
 ADD package.json /tmp/package.json
 
-RUN rm -rf dist
+# RUN rm -rf dist
 
 # Install dependancies with yarn
 RUN cd /tmp && yarn
@@ -19,15 +19,15 @@ RUN rm -rf /src/node_modules && cp -a /tmp/node_modules /src/
 WORKDIR /src
 
 # Run the build script
-RUN npm run-script build
+# RUN npm run-script build
 
 #Optional: Install pm2 globally
 # Docs: https://pm2.keymetrics.io/
-RUN npm install pm2 -g
+# RUN npm install pm2 -g
 
-#Expose port 300 where the qapplication will run
+#Expose port 3000 where the qapplication will run
 EXPOSE 3000
 
 # Start the application with pm2
 # You can also start it with just node
-CMD ["pm2-runtime", "process.json"]
+CMD ["yarn", "start:dev"]
