@@ -1,8 +1,6 @@
 // src/app.module.ts
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { UserService } from './user/user.service';
 import { UserResolver } from './user/user.resolver';
 import { UserModule } from './user/user.module';
@@ -19,9 +17,7 @@ import { DatabaseModule } from './database/database.module';
     UserModule,
     DatabaseModule,
   ],
-  controllers: [AppController],
   providers: [
-    AppService,
     UserService,
     UserResolver,
     ...databaseProviders,
