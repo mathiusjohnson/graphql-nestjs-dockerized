@@ -13,6 +13,7 @@ import { DatabaseModule } from './database/database.module';
 @Module({
   imports: [
     GraphQLModule.forRoot({
+      installSubscriptionHandlers: true,
       autoSchemaFile: 'schema.gql',
     }),
     UserModule,

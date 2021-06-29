@@ -1,4 +1,3 @@
-// src/user/user.schema.ts
 import { Field, ObjectType } from '@nestjs/graphql';
 import * as mongoose from 'mongoose';
 import { Document } from 'mongoose';
