@@ -6,7 +6,7 @@ services:
       - NODE_ENV=development
       # If you want to use a cloud service like Mongo Atlas, change this to your connection string,
       # or remove this like and store the connection string in a .env file so you don't have to commit it
-      - MONO_DB_CONNECTION_STRING=mongodb+srv://admin:admin@cluster0.aym4a.mongodb.net/nestjs-docker?retryWrites=true&w=majority
+      - MONGO_DB_CONNECTION_STRING=mongodb+srv://admin:admin@cluster0.aym4a.mongodb.net/nestjs-docker?retryWrites=true&w=majority
     env_file:
       - .env
     build:
